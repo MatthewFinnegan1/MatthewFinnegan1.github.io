@@ -473,7 +473,7 @@
             <div class="contact-form">
               <h3>Get In Touch</h3>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form id="contact-form" action="https://formspree.io/f/mzzalewa" method="POST">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -493,16 +493,12 @@
                   </div>
 
                   <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
                     <button type="submit" class="btn">Send Message</button>
                   </div>
 
                 </div>
               </form>
-
+              <div id="toast" aria-live="polite" aria-atomic="true">Success! Your message was sent.</div>
             </div>
           </div>
 

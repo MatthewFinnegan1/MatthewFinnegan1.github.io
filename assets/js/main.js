@@ -225,5 +225,51 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+  
+    /* ---------------------------
+   * Contact form (Formspree)
+   * --------------------------- */
+  const form = document.querySelector('#contact-form'); // add this id to your form
+  if (form) {
+    // create a toast once
+    let toast = document.getElementById('toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'toast';
+      toast.setAttribute('aria-live', 'polite');
+      toast.setAttribute('aria-atomic', 'true');
+      document.body.appendChild(toast);
+    }
+
+    const showToast = (msg, ok = true) => {
+      toast.textContent = msg;
+      toast.style.background = ok ? '#16a34a' : '#dc2626';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // stop redirect
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' } // JSON response = no Formspree redirect
+        });
+
+        if (res.ok) {
+          form.reset();
+          showToast('Success! Your message was sent. ', true);
+        } else {
+          const data = await res.json().catch(() => ({}));
+          const msg = data?.errors?.map(e => e.message).join(', ') || 'Something went wrong.';
+          showToast(msg, false);
+        }
+      } catch (err) {
+        showToast('Network error. Please try again.', false);
+      }
+    });
+  }
 
 })();

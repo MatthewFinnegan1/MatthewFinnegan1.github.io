@@ -1,0 +1,42 @@
+<form id="contact-form" action="https://formspree.io/f/mzzalewa" method="POST">
+  <div class="row gy-3">
+    <div class="col-md-6">
+      <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6">
+      <input name="email" type="email" class="form-control" placeholder="Your Email" required>
+    </div>
+    <div class="col-12">
+      <input name="subject" type="text" class="form-control" placeholder="Subject" required>
+    </div>
+    <div class="col-12">
+      <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+    </div>
+
+    <!-- spam honeypot (kept hidden by CSS) -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- optional redirect after success -->
+    <!-- <input type="hidden" name="_redirect" value="https://yourdomain.com/thanks.html"> -->
+
+    <div class="col-12 text-center mt-3">
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </div>
+  </div>
+</form>
+
+<script>
+  // Optional: nicer inline success/failure without leaving the page
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
+    if (resp.ok) {
+      alert('Thanks! Your message was sent.');
+      form.reset();
+    } else {
+      alert('Oops, something went wrong. Please email me directly.');
+    }
+  });
+</script>
