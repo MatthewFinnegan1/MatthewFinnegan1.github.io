@@ -123,19 +123,7 @@
                 autoplay muted loop playsinline></video>
         </div>
         
-        <!-- 3) Pipeline execution code snippet — media RIGHT, box LEFT -->
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-diagram-3"></i>
-            <h4 class="mt-2">Pipeline Execution</h4>
-            <p>Implements Unix-style pipelines by creating child processes with fork(), connecting their input and output streams using pipe() and dup2(). This allows the output of one command to seamlessly become the input of the next, enabling commands like cat file | grep foo to execute as a connected process chain.</p>
-          </div>
-        </div>
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/portfolio/Unix-Shell/pipe-helper.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
-        </div>
-
-        <!-- 4) Tokenization code snippet — media LEFT, box RIGHT -->
+        <!-- 3) Tokenization code snippet — media LEFT, box RIGHT -->
         <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
           <img src="assets/img/portfolio/Unix-Shell/create-token.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
         </div>
@@ -147,16 +135,16 @@
           </div>
         </div>
 
-        <!-- 5) error handling code snippet — media LEFT, box RIGHT -->
+        <!-- 4) Pipeline execution code snippet — media RIGHT, box LEFT -->
         <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
           <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-exclamation-triangle"></i>
-            <h4 class="mt-2">Error Handling</h4>
-            <p>Validates command syntax before execution, detecting issues such as multiple semicolons or pipes missing operands. Instead of crashing, the shell prints an error and returns to the prompt, ensuring robust and uninterrupted user interaction.</p>
+            <i class="bi bi-diagram-3"></i>
+            <h4 class="mt-2">Pipeline Execution</h4>
+            <p>Implements Unix-style pipelines by creating child processes with fork(), connecting their input and output streams using pipe() and dup2(). This allows the output of one command to seamlessly become the input of the next, enabling commands like cat file | grep foo to execute as a connected process chain.</p>
           </div>
         </div>
         <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/portfolio/Unix-Shell/error-checking.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
+          <img src="assets/img/portfolio/Unix-Shell/pipe-helper.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
         </div>
 
         <!-- 5)  Cleanup code snippet — media LEFT, box RIGHT -->
@@ -169,6 +157,18 @@
             <h4 class="mt-2">Cleanup</h4>
             <p>Reclaims all dynamically allocated memory and clears process structures after each command cycle. This disciplined resource management prevents leaks and ensures the shell remains stable across repeated executions.</p>
           </div>
+        </div>
+
+        <!-- 6) error handling code snippet — media LEFT, box RIGHT -->
+        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+          <div class="feature-item p-4 rounded-3 h-100">
+            <i class="bi bi-exclamation-triangle"></i>
+            <h4 class="mt-2">Error Handling</h4>
+            <p>Validates command syntax before execution, detecting issues such as multiple semicolons or pipes missing operands. Instead of crashing, the shell prints an error and returns to the prompt, ensuring robust and uninterrupted user interaction.</p>
+          </div>
+        </div>
+        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+          <img src="assets/img/portfolio/Unix-Shell/error-checking.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
         </div>
 
       </div>
