@@ -20,18 +20,18 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon-32x32.png" rel="icon">
-  <link href="assets/img/favicon-32x32.png" rel="apple-touch-icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Main CSS File -->
@@ -39,7 +39,7 @@
 
 </head>
 
-<body class="index-page">
+<body>
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-center">
     <button type="button" class="header-toggle d-xl-none bi bi-list" aria-controls="navmenu"
@@ -243,7 +243,6 @@
           <div class="col-lg-4">
             <div class="resume-side" data-aos="fade-right" data-aos-delay="100">
               <h3>What I'm Working On</h3>
-              <p></p>
               <div class="skills-animation mt-4">
                 <div class="skill-item">
                   <div class="d-flex justify-content-between">
@@ -308,12 +307,10 @@
 
                 <h3 class="mt-4">Primary Languages</h3>
                 <ul class="contact-info list-unstyled">
-                  <ul>
-                    <li>C/C++</li>
-                    <li>Python</li>
-                    <li>Assembly</li>
-                    <li>TS/JS</li>
-                  </ul>
+                  <li>C/C++</li>
+                  <li>Python</li>
+                  <li>Assembly</li>
+                  <li>TS/JS</li>
                 </ul>
 
                 <h3 class="mt-4">Contact Information</h3>
@@ -417,17 +414,16 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Portfolio</h2>
-        <p></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="portfolio-layout">
 
           <div class="row">
             <div class="col-lg-3 filter-sidebar">
               <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
-                <div class="portfolio-filters isotope-filters" role="group" aria-label="Filter portfolio projects">
+                <div class="portfolio-filters" role="group" aria-label="Filter portfolio projects">
                   <button type="button" data-filter="*" class="filter-active" aria-pressed="true"
                     aria-controls="portfolio-projects">All Projects</button>
                   <button type="button" data-filter=".filter-cybersecurity" aria-pressed="false"
@@ -441,13 +437,13 @@
             </div>
 
             <div class="col-lg-9">
-              <div id="portfolio-projects" class="row gy-4 portfolio-container isotope-container" data-aos="fade-up"
+              <div id="portfolio-projects" class="row gy-4 portfolio-container" data-aos="fade-up"
                 data-aos-delay="200">
 
 
 
                 <!-- Unix_Shell -->
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-systems">
+                <div class="col-lg-6 col-md-6 portfolio-item filter-systems">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/Unix-Shell/unix-shell-thumbnail-800.jpg" width="800" height="645"
                       class="img-fluid" alt="Unix Shell project wordmark" loading="lazy" decoding="async">
@@ -466,7 +462,7 @@
                 </div><!-- End Unix Shell Portfolio Item -->
 
                 <!-- Assembly Interpreter -->
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-systems">
+                <div class="col-lg-6 col-md-6 portfolio-item filter-systems">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/Assembly_Interpreter/assembly_thumbail.png" width="1080"
                       height="1080" class="img-fluid" alt="Assembly Interpreter project wordmark" loading="lazy"
@@ -486,7 +482,7 @@
                 </div><!-- End Assembly Interpreter Portfolio Item -->
 
                 <!-- DuckPond -->
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-other">
+                <div class="col-lg-6 col-md-6 portfolio-item filter-other">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/DuckPond/duckpond_logo.png" width="500" height="500"
                       class="img-fluid" alt="DuckPond Notification Platform logo" loading="lazy" decoding="async">
@@ -610,26 +606,19 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative">
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 

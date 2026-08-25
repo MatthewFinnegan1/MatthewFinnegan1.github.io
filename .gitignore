@@ -3,3 +3,6 @@
 
 # Original media retained locally but excluded from the deployed site
 /source-media/
+
+# macOS Finder metadata
+.DS_Store

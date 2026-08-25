@@ -29,18 +29,6 @@
   });
 
   /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
-  });
-
-  /**
    * Preloader
    */
   const preloader = document.querySelector('#preloader');
@@ -103,54 +91,52 @@
   /**
    * Animate the skills items on reveal
    */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
+  const skillGroups = document.querySelectorAll('.skills-animation');
+
+  const revealSkills = (group) => {
+    group.querySelectorAll('.progress .progress-bar').forEach((progressBar) => {
+      progressBar.style.width = `${progressBar.getAttribute('aria-valuenow')}%`;
     });
-  });
+  };
+
+  if ('IntersectionObserver' in window) {
+    const skillsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        revealSkills(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -20% 0px' });
+
+    skillGroups.forEach((group) => skillsObserver.observe(group));
+  } else {
+    skillGroups.forEach(revealSkills);
+  }
 
   /**
-   * Init isotope layout and filters
+   * Filter portfolio projects
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+  document.querySelectorAll('.portfolio-layout').forEach((portfolioLayout) => {
+    const projects = portfolioLayout.querySelectorAll('.portfolio-item');
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters button').forEach(function(filterButton) {
+    portfolioLayout.querySelectorAll('.portfolio-filters button').forEach((filterButton) => {
       filterButton.addEventListener('click', function() {
-        const activeFilter = isotopeItem.querySelector('.isotope-filters .filter-active');
+        const activeFilter = portfolioLayout.querySelector('.portfolio-filters .filter-active');
         activeFilter.classList.remove('filter-active');
         activeFilter.setAttribute('aria-pressed', 'false');
         this.classList.add('filter-active');
         this.setAttribute('aria-pressed', 'true');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
 
+        const filter = this.getAttribute('data-filter');
+        projects.forEach((project) => {
+          project.hidden = filter !== '*' && !project.matches(filter);
+        });
+
+        if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
+      });
+    });
   });
 
   /**
