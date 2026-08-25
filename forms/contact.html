@@ -31,7 +31,7 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
+    const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
     if (resp.ok) {
       alert('Thanks! Your message was sent.');
       form.reset();

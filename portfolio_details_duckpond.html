@@ -11,12 +11,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CZWDZT0JR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-3CZWDZT0JR');
   </script>
-  
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -24,7 +24,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -73,135 +75,153 @@
       </div>
     </div><!-- End Page Title -->
 
-   <section id="portfolio-details" class="portfolio-details section">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-      <div class="row gy-4">
-        <!-- LEFT: Static Logo (replaces slider) -->
-        <div class="col-lg-8 d-flex align-items-center justify-content-center">
-          <img src="assets/img/portfolio/DuckPond/duckpond_logo.png" alt="DuckPond Logo" class="img-fluid" style="max-height: 360px; object-fit: contain;">
-        </div>
-
-        <!-- RIGHT: Project Info -->
-        <div class="col-lg-4">
-          <div class="portfolio-info" data-aos="fade-left" data-aos-delay="200">
-            <h3>Project Information</h3>
-            <ul>
-              <li><strong>Category</strong>: Web Development</li>
-              <li><strong>Sponsor</strong>: Duck Creek Technologies</li>
-              <li><strong>Project date</strong>: Spring 2025</li>
-            </ul>
+        <div class="row gy-4">
+          <!-- LEFT: Static Logo (replaces slider) -->
+          <div class="col-lg-8 d-flex align-items-center justify-content-center">
+            <img src="assets/img/portfolio/DuckPond/duckpond_logo.png" alt="DuckPond Logo" class="img-fluid"
+              style="max-height: 360px; object-fit: contain;">
           </div>
-        </div>
 
-        <!-- Overview (kept) -->
-        <div class="col-lg-12">
-          <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-            <h2>Project Overview</h2>
-            <p>
-              <!-- keep your real overview text here -->
-              DuckPond is a notifications platform with policy/news/claims workflows, real-time filtering, drafts/sent tracking, and an AI copilot that generates structured messages on demand. Built in collaboration with a small team and sponsored by Duck Creek Technologies, the project gave me hands-on experience working in a professional setting with real-world requirements and deliverables.
-            </p>
+          <!-- RIGHT: Project Info -->
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-left" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Web Development</li>
+                <li><strong>Sponsor</strong>: Duck Creek Technologies</li>
+                <li><strong>Project date</strong>: Spring 2025</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <!-- ===== Alternating media + feature boxes ===== -->
-
-        <!-- 1) AI Assistant — media LEFT, box RIGHT -->
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <video src="assets/img/portfolio/DuckPond/AIAssistantDuckPond.mp4" class="img-fluid rounded-3 shadow-sm w-100"
-                autoplay muted loop playsinline></video>
-        </div>
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-stars"></i>
-            <h4 class="mt-2">AI Copilot</h4>
-            <p>Compose a complete notification from a single sentence. The copilot fills type-specific fields (policy, news, claims), enforces formats, and lets you accept or tweak before sending.</p>
+          <!-- Overview (kept) -->
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Project Overview</h2>
+              <p>
+                <!-- keep your real overview text here -->
+                DuckPond is a notifications platform with policy/news/claims workflows, real-time filtering, drafts/sent
+                tracking, and an AI copilot that generates structured messages on demand. Built in collaboration with a
+                small team and sponsored by Duck Creek Technologies, the project gave me hands-on experience working in
+                a professional setting with real-world requirements and deliverables.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <!-- 2) Login — box LEFT, media RIGHT -->
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-box-arrow-in-right"></i>
-            <h4 class="mt-2">Easy Sign In</h4>
-            <p>Secure login system that authenticates users and provides access to their personalized notifications.</p>
+          <!-- ===== Alternating media + feature boxes ===== -->
+
+          <!-- 1) AI Assistant — media LEFT, box RIGHT -->
+          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+            <video src="assets/img/portfolio/DuckPond/AIAssistantDuckPond.mp4"
+              class="img-fluid rounded-3 shadow-sm w-100" autoplay muted loop playsinline></video>
           </div>
-        </div>
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <video src="assets/img/portfolio/DuckPond/SignInDuckPond.mp4" class="img-fluid rounded-3 shadow-sm w-100"
-                autoplay muted loop playsinline></video> 
-        </div>
-        
-
-        <!-- 3) Sign Up — media LEFT, box RIGHT -->
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <video src="assets/img/portfolio/DuckPond/SignupDuckPond.mp4" class="img-fluid rounded-3 shadow-sm w-100"
-                autoplay muted loop playsinline></video>
-        </div>
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-person-plus"></i>
-            <h4 class="mt-2">Simple Sign Up</h4>
-            <p>Streamlined registration process that creates a new account and sets up a user profile in seconds.</p>
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <div class="feature-item p-4 rounded-3 h-100">
+              <i class="bi bi-stars"></i>
+              <h4 class="mt-2">AI Copilot</h4>
+              <p>Compose a complete notification from a single sentence. The copilot fills type-specific fields (policy,
+                news, claims), enforces formats, and lets you accept or tweak before sending.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- 4) Filtering — box LEFT, media RIGHT -->
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-funnel"></i>
-            <h4 class="mt-2">Real-Time Filtering</h4>
-            <p>Dynamic filtering tools that let users quickly search and sort notifications by type, priority, or sender.</p>
+          <!-- 2) Login — box LEFT, media RIGHT -->
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <div class="feature-item p-4 rounded-3 h-100">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <h4 class="mt-2">Easy Sign In</h4>
+              <p>Secure login system that authenticates users and provides access to their personalized notifications.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <video src="assets/img/portfolio/DuckPond/filteringDuckPond.mp4" class="img-fluid rounded-3 shadow-sm w-100"
-                autoplay muted loop playsinline></video>
-        </div>
-
-        <!-- 5) Settings — media LEFT, box RIGHT -->
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/portfolio/DuckPond/settingsDuckPond.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
-        </div>
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-sliders"></i>
-            <h4 class="mt-2">Personalized Settings</h4>
-            <p>Customizable preferences, including notification defaults and user profile management, for a tailored experience</p>
+          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+            <video src="assets/img/portfolio/DuckPond/SignInDuckPond.mp4" class="img-fluid rounded-3 shadow-sm w-100"
+              autoplay muted loop playsinline></video>
           </div>
-        </div>
 
-        <!-- 6) Architecture — media RIGHT, box LEFT -->
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-diagram-3"></i>
-            <h4 class="mt-2">System Architecture</h4>
-            <p>This diagram illustrates how DuckPond’s frontend (Next.js), backend (Flask + FastAPI), and cloud services (MongoDB Atlas and OpenAI API) work together. It highlights the flow of requests between users, the application, and external services — demonstrating both the technical stack and the communication layers behind the platform.</p>
+
+          <!-- 3) Sign Up — media LEFT, box RIGHT -->
+          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+            <video src="assets/img/portfolio/DuckPond/SignupDuckPond.mp4" class="img-fluid rounded-3 shadow-sm w-100"
+              autoplay muted loop playsinline></video>
           </div>
-        </div>
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/portfolio/DuckPond/architectureDuckPond.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
-        </div>
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <div class="feature-item p-4 rounded-3 h-100">
+              <i class="bi bi-person-plus"></i>
+              <h4 class="mt-2">Simple Sign Up</h4>
+              <p>Streamlined registration process that creates a new account and sets up a user profile in seconds.</p>
+            </div>
+          </div>
 
-        <!-- 5) Database Schema — media LEFT, box RIGHT -->
-        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/portfolio/DuckPond/ERDiagramDuckPond.png" alt="Settings" class="img-fluid rounded-3 shadow-sm w-100">
-        </div>
-        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
-          <div class="feature-item p-4 rounded-3 h-100">
-            <i class="bi bi-database"></i>
-            <h4 class="mt-2">Database Schema Design</h4>
-            <p>This ERD illustrates the relational structure behind DuckPond, connecting users to their notifications. It highlights how users, notifications, and their associations are modeled to support key features such as drafts, read/unread states, and notification filtering. The design ensures scalability while keeping data integrity with clear foreign key relationships.</p>
+          <!-- 4) Filtering — box LEFT, media RIGHT -->
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <div class="feature-item p-4 rounded-3 h-100">
+              <i class="bi bi-funnel"></i>
+              <h4 class="mt-2">Real-Time Filtering</h4>
+              <p>Dynamic filtering tools that let users quickly search and sort notifications by type, priority, or
+                sender.</p>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+            <video src="assets/img/portfolio/DuckPond/filteringDuckPond.mp4" class="img-fluid rounded-3 shadow-sm w-100"
+              autoplay muted loop playsinline></video>
+          </div>
+
+          <!-- 5) Settings — media LEFT, box RIGHT -->
+          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/portfolio/DuckPond/settingsDuckPond.png" alt="Settings"
+              class="img-fluid rounded-3 shadow-sm w-100">
+          </div>
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <div class="feature-item p-4 rounded-3 h-100">
+              <i class="bi bi-sliders"></i>
+              <h4 class="mt-2">Personalized Settings</h4>
+              <p>Customizable preferences, including notification defaults and user profile management, for a tailored
+                experience</p>
+            </div>
+          </div>
+
+          <!-- 6) Architecture — media RIGHT, box LEFT -->
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <div class="feature-item p-4 rounded-3 h-100">
+              <i class="bi bi-diagram-3"></i>
+              <h4 class="mt-2">System Architecture</h4>
+              <p>This diagram illustrates how DuckPond’s frontend (Next.js), backend (Flask + FastAPI), and cloud
+                services (MongoDB Atlas and OpenAI API) work together. It highlights the flow of requests between users,
+                the application, and external services — demonstrating both the technical stack and the communication
+                layers behind the platform.</p>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/portfolio/DuckPond/architectureDuckPond.png" alt="Settings"
+              class="img-fluid rounded-3 shadow-sm w-100">
+          </div>
+
+          <!-- 5) Database Schema — media LEFT, box RIGHT -->
+          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/portfolio/DuckPond/ERDiagramDuckPond.png" alt="Settings"
+              class="img-fluid rounded-3 shadow-sm w-100">
+          </div>
+          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="150">
+            <div class="feature-item p-4 rounded-3 h-100">
+              <i class="bi bi-database"></i>
+              <h4 class="mt-2">Database Schema Design</h4>
+              <p>This ERD illustrates the relational structure behind DuckPond, connecting users to their notifications.
+                It highlights how users, notifications, and their associations are modeled to support key features such
+                as drafts, read/unread states, and notification filtering. The design ensures scalability while keeping
+                data integrity with clear foreign key relationships.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   </main>
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
