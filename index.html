@@ -44,7 +44,8 @@
 <body class="index-page">
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-center">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <button type="button" class="header-toggle d-xl-none bi bi-list" aria-controls="navmenu"
+      aria-expanded="false" aria-label="Open navigation"></button>
 
     <div class="header-container d-flex flex-column align-items-start">
       <nav id="navmenu" class="navmenu">
@@ -92,8 +93,10 @@
                 </div>
 
                 <div class="social-links">
-                  <a href="https://github.com/MatthewFinnegan1"><i class="bi bi-github"></i></a>
-                  <a href="https://www.linkedin.com/in/matthew-finnegan1/"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/MatthewFinnegan1" aria-label="GitHub profile"><i class="bi bi-github"
+                      aria-hidden="true"></i></a>
+                  <a href="https://www.linkedin.com/in/matthew-finnegan1/" aria-label="LinkedIn profile"><i
+                      class="bi bi-linkedin" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
@@ -421,17 +424,22 @@
           <div class="row">
             <div class="col-lg-3 filter-sidebar">
               <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
-                <ul class="portfolio-filters isotope-filters">
-                  <li data-filter="*" class="filter-active">All Projects</li>
-                  <li data-filter=".filter-cybersecurity">Cybersecurity</li>
-                  <li data-filter=".filter-systems">Systems</li>
-                  <li data-filter=".filter-other">Other</li>
-                </ul>
+                <div class="portfolio-filters isotope-filters" role="group" aria-label="Filter portfolio projects">
+                  <button type="button" data-filter="*" class="filter-active" aria-pressed="true"
+                    aria-controls="portfolio-projects">All Projects</button>
+                  <button type="button" data-filter=".filter-cybersecurity" aria-pressed="false"
+                    aria-controls="portfolio-projects">Cybersecurity</button>
+                  <button type="button" data-filter=".filter-systems" aria-pressed="false"
+                    aria-controls="portfolio-projects">Systems</button>
+                  <button type="button" data-filter=".filter-other" aria-pressed="false"
+                    aria-controls="portfolio-projects">Other</button>
+                </div>
               </div>
             </div>
 
             <div class="col-lg-9">
-              <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
+              <div id="portfolio-projects" class="row gy-4 portfolio-container isotope-container" data-aos="fade-up"
+                data-aos-delay="200">
 
 
 
@@ -445,8 +453,9 @@
                         <span class="category">Systems</span>
                         <h4>Unix Shell Implementation</h4>
                         <div class="portfolio-links">
-                          <a href="portfolio_details_unix_shell.html" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
+                          <a href="portfolio_details_unix_shell.html" title="More Details"
+                            aria-label="View Unix Shell Implementation details"><i class="bi bi-arrow-right"
+                              aria-hidden="true"></i></a>
                         </div>
                       </div>
                     </div>
@@ -463,8 +472,9 @@
                         <span class="category">Systems</span>
                         <h4>Assembly Interpreter</h4>
                         <div class="portfolio-links">
-                          <a href="portfolio_details_assembly_interpreter.html" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
+                          <a href="portfolio_details_assembly_interpreter.html" title="More Details"
+                            aria-label="View Assembly Interpreter details"><i class="bi bi-arrow-right"
+                              aria-hidden="true"></i></a>
                         </div>
                       </div>
                     </div>
@@ -481,8 +491,9 @@
                         <span class="category">Other</span>
                         <h4>DuckPond Notification Platform</h4>
                         <div class="portfolio-links">
-                          <a href="portfolio_details_duckpond.html" title="More Details"><i
-                              class="bi bi-arrow-right"></i></a>
+                          <a href="portfolio_details_duckpond.html" title="More Details"
+                            aria-label="View DuckPond Notification Platform details"><i class="bi bi-arrow-right"
+                              aria-hidden="true"></i></a>
                         </div>
                       </div>
                     </div>

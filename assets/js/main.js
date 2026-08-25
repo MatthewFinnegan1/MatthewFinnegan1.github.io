@@ -8,9 +8,11 @@
   const headerToggleBtn = document.querySelector('.header-toggle');
 
   function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
+    const isOpen = document.querySelector('#header').classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
+    headerToggleBtn.setAttribute('aria-expanded', String(isOpen));
+    headerToggleBtn.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
   }
   headerToggleBtn.addEventListener('click', headerToggle);
 
@@ -145,10 +147,13 @@
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+    isotopeItem.querySelectorAll('.isotope-filters button').forEach(function(filterButton) {
+      filterButton.addEventListener('click', function() {
+        const activeFilter = isotopeItem.querySelector('.isotope-filters .filter-active');
+        activeFilter.classList.remove('filter-active');
+        activeFilter.setAttribute('aria-pressed', 'false');
         this.classList.add('filter-active');
+        this.setAttribute('aria-pressed', 'true');
         initIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
