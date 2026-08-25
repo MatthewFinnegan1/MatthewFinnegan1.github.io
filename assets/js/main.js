@@ -255,8 +255,12 @@
     /* ---------------------------
    * Contact form (Formspree)
    * --------------------------- */
-  const form = document.querySelector('#contact-form'); // add this id to your form
+  const form = document.querySelector('#contact-form');
   if (form) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const submitButtonLabel = submitButton?.textContent ?? 'Send Message';
+    let isSubmitting = false;
+
     // create a toast once
     let toast = document.getElementById('toast');
     if (!toast) {
@@ -277,6 +281,16 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); // stop redirect
 
+      if (isSubmitting) return;
+
+      isSubmitting = true;
+      form.setAttribute('aria-busy', 'true');
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+      }
+
       try {
         const res = await fetch(form.action, {
           method: 'POST',
@@ -294,6 +308,14 @@
         }
       } catch (err) {
         showToast('Network error. Please try again.', false);
+      } finally {
+        isSubmitting = false;
+        form.removeAttribute('aria-busy');
+
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitButtonLabel;
+        }
       }
     });
   }

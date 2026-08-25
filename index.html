@@ -564,19 +564,32 @@
                 <div class="row gy-4">
 
                   <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    <label for="contact-name" class="form-label">Your Name</label>
+                    <input id="contact-name" type="text" name="name" class="form-control" autocomplete="name"
+                      required>
                   </div>
 
                   <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                    <label for="contact-email" class="form-label">Your Email</label>
+                    <input id="contact-email" type="email" class="form-control" name="email" autocomplete="email"
+                      required>
                   </div>
 
                   <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    <label for="contact-subject" class="form-label">Subject</label>
+                    <input id="contact-subject" type="text" class="form-control" name="subject" autocomplete="off"
+                      required>
                   </div>
 
                   <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    <label for="contact-message" class="form-label">Message</label>
+                    <textarea id="contact-message" class="form-control" name="message" rows="6" autocomplete="off"
+                      required></textarea>
+                  </div>
+
+                  <div class="visually-hidden" aria-hidden="true">
+                    <label for="contact-website">Leave this field blank</label>
+                    <input id="contact-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
                   </div>
 
                   <div class="col-12 text-center">
@@ -585,7 +598,7 @@
 
                 </div>
               </form>
-              <div id="toast" aria-live="polite" aria-atomic="true">Success! Your message was sent.</div>
+              <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
             </div>
           </div>
 
