@@ -101,11 +101,6 @@
   }
 
   /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
@@ -120,13 +115,6 @@
         });
       }
     });
-  });
-
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
   });
 
   /**
@@ -166,23 +154,63 @@
   });
 
   /**
-   * Init swiper sliders
+   * Load videos shortly before they enter the viewport, then play only while visible.
    */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+  const lazyVideos = document.querySelectorAll('video.lazy-video');
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
-    });
+  if (lazyVideos.length) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const loadVideo = (video) => {
+      if (video.dataset.loaded === 'true') return;
+
+      const source = video.querySelector('source[data-src]');
+      if (!source) return;
+
+      source.src = source.dataset.src;
+      video.dataset.loaded = 'true';
+      video.load();
+    };
+
+    if ('IntersectionObserver' in window) {
+      const loadObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          loadVideo(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: '400px 0px' });
+
+      const playbackObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (!reduceMotion && entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+            loadVideo(video);
+            video.play().catch(() => {
+              // Browser autoplay policies may require the visitor to press play.
+            });
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: [0, 0.35] });
+
+      lazyVideos.forEach((video) => {
+        loadObserver.observe(video);
+        playbackObserver.observe(video);
+      });
+    } else {
+      lazyVideos.forEach((video) => {
+        loadVideo(video);
+        if (!reduceMotion) {
+          video.play().catch(() => {
+            // Browser autoplay policies may require the visitor to press play.
+          });
+        }
+      });
+    }
   }
-
-  window.addEventListener("load", initSwiper);
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.

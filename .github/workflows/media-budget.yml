@@ -1,0 +1,13 @@
+name: Media budget
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  check-media:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check deployed media sizes
+        run: ./scripts/check-media-size.sh
