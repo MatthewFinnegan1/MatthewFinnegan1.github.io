@@ -89,57 +89,6 @@
   }
 
   /**
-   * Animate the skills items on reveal
-   */
-  const skillGroups = document.querySelectorAll('.skills-animation');
-
-  const revealSkills = (group) => {
-    group.querySelectorAll('.progress .progress-bar').forEach((progressBar) => {
-      progressBar.style.width = `${progressBar.getAttribute('aria-valuenow')}%`;
-    });
-  };
-
-  if ('IntersectionObserver' in window) {
-    const skillsObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        revealSkills(entry.target);
-        observer.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -20% 0px' });
-
-    skillGroups.forEach((group) => skillsObserver.observe(group));
-  } else {
-    skillGroups.forEach(revealSkills);
-  }
-
-  /**
-   * Filter portfolio projects
-   */
-  document.querySelectorAll('.portfolio-layout').forEach((portfolioLayout) => {
-    const projects = portfolioLayout.querySelectorAll('.portfolio-item');
-
-    portfolioLayout.querySelectorAll('.portfolio-filters button').forEach((filterButton) => {
-      filterButton.addEventListener('click', function() {
-        const activeFilter = portfolioLayout.querySelector('.portfolio-filters .filter-active');
-        activeFilter.classList.remove('filter-active');
-        activeFilter.setAttribute('aria-pressed', 'false');
-        this.classList.add('filter-active');
-        this.setAttribute('aria-pressed', 'true');
-
-        const filter = this.getAttribute('data-filter');
-        projects.forEach((project) => {
-          project.hidden = filter !== '*' && !project.matches(filter);
-        });
-
-        if (typeof AOS !== 'undefined') {
-          AOS.refresh();
-        }
-      });
-    });
-  });
-
-  /**
    * Load videos shortly before they enter the viewport, then play only while visible.
    */
   const lazyVideos = document.querySelectorAll('video.lazy-video');
